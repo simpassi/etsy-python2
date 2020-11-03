@@ -318,6 +318,8 @@ class API(object):
                 if hasattr(value, 'read'):
                     file_mimetype = mimetypes.guess_type(value.name) or 'application/octet-stream'
                     data[name] = (value.name, value.read(), file_mimetype)
+                elif isinstance(value, list):
+                    data[name] = value
                 else:
                     data[name] = (None, str(value))
 
