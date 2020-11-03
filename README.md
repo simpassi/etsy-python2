@@ -1,7 +1,6 @@
 ## Intro
 Updated version of [etsy-python](https://github.com/mcfunley/etsy-python) with python3
-compatibility and support for the modern etsy api. Please file any bugs, suggestions,
-or usage questions as github issues and I will get to them as soon as possible.
+compatibility and support for the modern etsy api.
 
 See changelog at bottom of the readme for differences between etsy-python and etsy-python2. The
 last release for etsy-python was 0.3.1.
@@ -13,8 +12,9 @@ Originally by Dan McKinley - dan@etsy.com - [http://mcfunley.com](http://mcfunle
 
 Forked by Sean Scheetz
 
-**Other Contributors**
+That fork forked by Simo Virokannas
 
+**Other Contributors**
 
 [James Tatum](https://github.com/jtatum)
 
@@ -203,6 +203,9 @@ api = Etsy(method_cache=None)
 
 
 ## Version History
+
+### Version 0.7.1
+- Fixed sending arrays over, as some API calls (like updateInventory) require it
 
 ### Version 0.7.0
 - Url parameters now sent in the url instead of the query string.
