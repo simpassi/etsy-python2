@@ -319,7 +319,10 @@ class API(object):
                     file_mimetype = mimetypes.guess_type(value.name) or 'application/octet-stream'
                     data[name] = (value.name, value.read(), file_mimetype)
                 elif isinstance(value, list):
-                    data[name] = value
+                    if isinstance(value[0], int):
+                        data[name] = str(value).strip("[]").replace(" ", "")
+                    else:
+                        data[name] = value
                 else:
                     data[name] = (None, str(value))
 
